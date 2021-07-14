@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+<!--    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">-->
+<!--    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">-->
+    <title>Hello World!</title>
+</head>
+<body style="height: auto">
+<h1 id="connection"></h1>
+<button id="button1">BUTTONNN</button>
+<iframe id="frameId" src="https://cms2-1-fe-appsmen.vercel.app" style="width: 100%; height: 800px"></iframe>
+<!--<script src="renderer.js"></script>-->
+<script>
+    let root = document.getElementById("button1");
+    console.log("root: ", root);
+
+    root.onclick = function () {
+        console.log('The root is clicked222');
+        window.api.send("toMain", "some data222222");
+    }
+</script>
+</body>
+</html>
