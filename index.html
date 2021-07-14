@@ -16,6 +16,10 @@
     let root = document.getElementById("button1");
     console.log("root: ", root);
 
+    window.api.receive("fromMain", (data) => {
+        console.log(`Received ${data} from main process`);
+    })
+    
     root.onclick = function () {
         console.log('The root is clicked222');
         //window.api.send("toMain", "some data222222");
